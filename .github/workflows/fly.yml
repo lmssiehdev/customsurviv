@@ -25,6 +25,9 @@ jobs:
 
     - name: Build the project
       run: npm run build
+    
+    - name: List generated files
+      run: ls dist/src
 
     - name: Start the project
       run: npm run start
