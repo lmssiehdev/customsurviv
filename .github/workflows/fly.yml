@@ -9,8 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone public folder
-      run: git clone https://github.com/SurvivReloaded/survivreloaded-client.git public
+    - name: Clone repository
+      uses: actions/checkout@v2
+      with:
+        repository: SurvivReloaded/survivreloaded-client
+        ref: master
+        path: publi
 
     - name: Checkout code
       uses: actions/checkout@v2
