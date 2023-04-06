@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Clone public folder
-      run: git clonehttps://github.com/SurvivReloaded/survivreloaded-client.git public
+      run: git clone https://github.com/SurvivReloaded/survivreloaded-client.git public
 
     - name: Checkout code
       uses: actions/checkout@v2
