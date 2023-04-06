@@ -7,17 +7,17 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
-    steps:
+    
+    steps:    
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
     - name: Clone repository
       uses: actions/checkout@v2
       with:
         repository: SurvivReloaded/survivreloaded-client
         ref: master
-        path: publi
-
-    - name: Checkout code
-      uses: actions/checkout@v2
+        path: public
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
