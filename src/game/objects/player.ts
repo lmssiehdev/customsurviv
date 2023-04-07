@@ -300,15 +300,14 @@ export class Player extends GameObject {
             this.switchSlot(0);
         }
         // /* Quickswitching test
-        this.inventory.bandage = 3;
         this.inventory["12gauge"] = 10;
         this.weapons[0].typeString = "spas12";
         this.weapons[0].typeId = TypeToId.spas12;
         this.inventory["762mm"] = 10;
         this.weapons[1].typeString = "sv98";
         this.weapons[1].typeId = TypeToId.sv98;
-        this.chestLevel = 3;
-        this.helmetLevel = 3;
+        this.chestLevel = 2;
+        this.helmetLevel = 2;
         // Init body
         this.body = game.world.createBody({
             type: "dynamic",
