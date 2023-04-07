@@ -536,8 +536,12 @@ export class Game {
     addPlayer(socket, name, loadout): Player {
         let spawnPosition;
         if(!this.allowJoin) spawnPosition = Vec2(360, 360);
-        if(Debug.fixedSpawnLocation.length) spawnPosition = Vec2(Debug.fixedSpawnLocation[0], Debug.fixedSpawnLocation[1]);
-        else if(this.gas.currentRad <= 16) spawnPosition = this.gas.currentPos.clone();
+        if(Debug.fixedSpawnLocation.length) {
+            const positions = [[470, 100], [480, 100], [490, 100], [500, 110], [520, 120], [530, 130], [540, 140], [550, 150]];
+            const [x, y] = positions[Math.floor(Math.random() * positions.length)];
+
+            spawnPosition = Vec2(x, y);
+        } else if(this.gas.currentRad <= 16) spawnPosition = this.gas.currentPos.clone();
         else {
             let foundPosition = false;
             while(!foundPosition) {

@@ -15,6 +15,7 @@ import {
     rectRectCollision,
     rotateRect,
     TypeToId,
+    Weapons,
     weightedRandom
 } from "../utils";
 import { type Game } from "./game";
@@ -23,7 +24,7 @@ import { Structure } from "./objects/structure";
 import { Building } from "./objects/building";
 import { Decal } from "./objects/decal";
 import { Vec2 } from "planck";
-import { generateLooseLootFromArray, type looseLootTiers } from "./objects/loot";
+import { generateLooseLootFromArray, Loot, type looseLootTiers } from "./objects/loot";
 import { type GameObject } from "./gameObject";
 
 export class Map {
@@ -85,6 +86,56 @@ export class Map {
             }
             // 4 fisherman's shacks: 2 at oceanside, 2 at riverside
         } else {
+
+            this.obstacleTest("crate_01", Vec2(500, 105), 1);
+            this.obstacleTest("crate_01", Vec2(500, 103), 1);
+
+            const data = Objects.club_complex_01;
+            this.genBuilding("club_complex_01", data, Vec2(500, 103));
+            this.game.staticObjects.add(new Loot(this.game, "sv98   ", Vec2(500, 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(480 * (Math.random() + 10), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(480 + (Math.random() * 1), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(520, 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(520, 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(480 + (Math.random() * 1), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "m1014", Vec2(480 + (Math.random() * 20), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "m1014", Vec2(480 + (Math.random() * 20), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "m1014", Vec2(480 + (Math.random() * 20), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "m1014", Vec2(480 + (Math.random() * 20), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "m1014", Vec2(480 + (Math.random() * 20), 103), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(480 + (Math.random() * 20), 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(480 + (Math.random() * 20), 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(480 + (Math.random() * 20), 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(480 + (Math.random() * 20), 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(480 + (Math.random() * 1), 103), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(500, 103), 0, 5000));
+
+            this.game.staticObjects.add(new Loot(this.game, Weapons.awc.ammo, Vec2(520, 105), 0, 10));
+            this.game.staticObjects.add(new Loot(this.game, "awc", Vec2(520, 105), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "sv98   ", Vec2(520, 105), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(520, 106), 0, 1));
+
+            this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(520, 107), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(520, 108), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(520, 109), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(520, 110), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "mosin", Vec2(520, 111), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "mosin", Vec2(520, 112), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "mosin", Vec2(520, 113), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "mosin", Vec2(520, 114), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "mosin", Vec2(520, 115), 0, 1));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(520, 116), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(520, 117), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(520, 118), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, "spas12", Vec2(520, 119), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(520, 103), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(520, 103), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(550, 133), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(550, 133), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(560, 133), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(560, 133), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(500, 153), 0, 5000));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(520, 153), 0, 5000));
             //this.genStructure("club_structure_01", Objects.club_structure_01, Vec2(450, 150));
 
             //this.genBuildingTest("hedgehog_01", 0);
