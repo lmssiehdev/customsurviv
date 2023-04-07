@@ -256,14 +256,6 @@ export class Player extends GameObject {
         this.groupId = this.game.nextGroupId;
         this.name = name;
         this.zoom = Constants.scopeZoomRadius.desktop["4xscope"];
-        this.weapons[0] = {
-                typeString: Weapons.spas12.typeString,
-                typeId: Weapons.spas12.typeString,
-                ammo: 5,
-                cooldown: 0,
-                cooldownDuration: 0,
-                weaponType: WeaponType.Gun
-        };
         this.actionItem = { typeString: "", typeId: 0, duration: 0, useEnd: -1 };
         this.joinTime = Date.now();
 
