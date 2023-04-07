@@ -157,9 +157,9 @@ export class Player extends GameObject {
         healthkit: 0,
         soda: 0,
         painkiller: 0,
-        "1xscope": 1,
+        "1xscope": 0,
         "2xscope": 0,
-        "4xscope": 0,
+        "4xscope": 1,
         "8xscope": 0,
         "15xscope": 0
     };
