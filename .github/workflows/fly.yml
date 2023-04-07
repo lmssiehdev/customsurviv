@@ -26,12 +26,6 @@ jobs:
     - name: Build the project
       run: npm run build
     
-    - name: List generated files
-      run: ls dist
-
-    - name: Start the project
-      run: npm run start
-
     - name: Deploy to Fly
       uses: superfly/flyctl-actions@master
       env:
