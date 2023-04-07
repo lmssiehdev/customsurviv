@@ -27,7 +27,7 @@ jobs:
       run: npm run build
     
     - name: List generated files
-      run: ls
+      run: ls dist
 
     - name: Start the project
       run: npm run start
