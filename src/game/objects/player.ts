@@ -291,21 +291,19 @@ export class Player extends GameObject {
         this.weapons[2].typeString = this.loadout.meleeType;
         this.weapons[2].typeId = this.loadout.melee;
 
-        if(this.game.gas.stage >= 9) {
+        if(false) {
             this.inventory.bandage = 3;
-            this.inventory["9mm"] = 30;
-            this.inventory["762mm"] = 30;
-            const weapon = randomBoolean() ? "m9" : "ot38";
+            this.inventory["12gauge"] = 30;
+            const weapon = "spas12";
             this.weapons[0].typeString = weapon;
             this.weapons[0].typeId = TypeToId[weapon];
             this.switchSlot(0);
         }
-        /* Quickswitching test
-        this.inventory["762mm"] = 120;
-        this.weapons[0].typeString = "sv98";
-        this.weapons[0].typeId = TypeToId.sv98;
-        this.weapons[1].typeString = "sv98";
-        this.weapons[1].typeId = TypeToId.sv98; */
+        // /* Quickswitching test
+        this.inventory.bandage = 3;
+        this.inventory["12gauge"] = 5;
+        this.weapons[0].typeString = "spas12";
+        this.weapons[0].typeId = TypeToId.spas12;
 
         // Init body
         this.body = game.world.createBody({
