@@ -87,11 +87,27 @@ export class Map {
             // 4 fisherman's shacks: 2 at oceanside, 2 at riverside
         } else {
 
-            this.obstacleTest("crate_01", Vec2(500, 105), 1);
-            this.obstacleTest("crate_01", Vec2(500, 103), 1);
 
+        const positions = [
+            [345, 345],
+            [345, 360],
+            [345, 375],
+            [360, 345],
+            [360, 360],
+            [360, 375],
+            [375, 345],
+            [375, 360],
+            [375, 375],
+            [330, 330]
+        ];
+
+
+        positions.forEach(([x, y]) => {
+            this.game.staticObjects.add(new Loot(this.game, Weapons.m1014.ammo, Vec2(x + (Math.random() * 10), y), 0, 4800));
+            this.game.staticObjects.add(new Loot(this.game, Weapons.sv98.ammo, Vec2(x + (Math.random() * 10), y), 0, 4800));
+        })
             const data = Objects.club_complex_01;
-            this.genBuilding("club_complex_01", data, Vec2(500, 103));
+            this.genBuilding("club_complex_01", data, Vec2(360, 360));
             this.game.staticObjects.add(new Loot(this.game, "sv98   ", Vec2(500, 103), 0, 1));
             this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(480 * (Math.random() + 10), 103), 0, 1));
             this.game.staticObjects.add(new Loot(this.game, "sv98", Vec2(480 + (Math.random() * 1), 103), 0, 1));
