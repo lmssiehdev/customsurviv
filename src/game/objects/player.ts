@@ -773,8 +773,7 @@ export class Player extends GameObject {
     }
 
     get boost(): number {
-        // unlimited soda
-        return 70;
+        return this._boost;
     }
 
     set boost(boost: number) {

@@ -537,16 +537,7 @@ export class Game {
         let spawnPosition;
         if(!this.allowJoin) spawnPosition = Vec2(360, 360);
         if(Debug.fixedSpawnLocation.length) {
-            const positions = [[345, 345],
-            [345, 360],
-            [345, 375],
-            [360, 345],
-            [360, 360],
-            [360, 375],
-            [375, 345],
-            [375, 360],
-            [375, 375],
-            [330, 330],];
+            const positions = [[470, 100], [480, 100], [490, 100], [500, 110], [520, 120], [530, 130], [540, 140], [550, 150]];
             const [x, y] = positions[Math.floor(Math.random() * positions.length)];
 
             spawnPosition = Vec2(x, y);
@@ -585,7 +576,7 @@ export class Game {
         new AliveCountsPacket(this).serialize(stream);
         p.sendData(stream);
 
-        if(this.aliveCount >= 1 && !this.started) {
+        if(this.aliveCount > 1 && !this.started) {
             this.started = true;
             Game.advanceRedZone(this);
         }
@@ -595,7 +586,7 @@ export class Game {
 
     static advanceRedZone(game: Game): void {
         if(Debug.disableRedZone) return;
-        const currentStage = RedZoneStages[0];
+        const currentStage = RedZoneStages[game.gas.stage + 1];
         if(!currentStage) return;
         game.gas.stage++;
         game.gas.mode = currentStage.mode;
