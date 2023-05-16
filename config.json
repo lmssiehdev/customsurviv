@@ -4,7 +4,7 @@
   "https": false,
   "keyFile": "config/key.pem",
   "certFile": "config/cert.pem",
-
+  "addr": "customsurviv.fly.dev",
   "movementSpeed": 0.013,
   "botProtection": false,
   "stopServerOnGameEnd": false,
