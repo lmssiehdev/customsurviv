@@ -26,7 +26,7 @@ import { Structure } from "./objects/structure";
 import { Building } from "./objects/building";
 import { Decal } from "./objects/decal";
 import { Vec2 } from "planck";
-import { generateLooseLootFromArray } from "./objects/loot";
+import { Loot, generateLooseLootFromArray } from "./objects/loot";
 import { type GameObject } from "./gameObject";
 import { Stair } from "./stair";
 
@@ -178,6 +178,25 @@ export class Map {
             }
         } else {
             // Building/obstacle debug code goes here
+                        // Building/obstacle debug code goes here
+            new Loot(this.game, "762mm", Vec2(450, 150), 0, 180);
+            new Loot(this.game, "2xscope", Vec2(450, 150), 0, 1);
+            new Loot(this.game, "m870", Vec2(450, 150), 0, 1);
+            new Loot(this.game, "m1911", Vec2(450, 150), 0, 1);
+            new Loot(this.game, "m870", Vec2(450, 150), 0, 1);
+
+            // Todo make me a loop
+            this.genBuilding("container_05", Objects.container_05, Vec2(400, 400));
+            this.genBuilding("container_05", Objects.container_05, Vec2(370, 395));
+            this.genBuilding("container_05", Objects.container_05, Vec2(333, 392));
+            this.genBuilding("container_05", Objects.container_05, Vec2(387, 372));
+            this.genBuilding("container_05", Objects.container_05, Vec2(369, 376), 2);
+            this.genBuilding("container_05", Objects.container_05, Vec2(376, 348));
+            this.genBuilding("container_05", Objects.container_05, Vec2(340, 375));
+            this.genBuilding("container_05", Objects.container_05, Vec2(355, 345));
+            this.genBuilding("container_05", Objects.container_05, Vec2(319, 360));
+            this.genBuilding("container_05", Objects.container_05, Vec2(356, 321));
+            this.genBuilding("container_05", Objects.container_05, Vec2(380, 320));
         }
 
         // Calculate visible objects
