@@ -19,7 +19,7 @@
   "author": "Henry Sanger",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/SurvivReloaded/survivreloaded-server/issues"
+    "url": "https://github.com/SurvivReloaded/survivreloaded-server/issues "
   },
   "homepage": "https://resurviv.io",
   "dependencies": {
